@@ -1,0 +1,4 @@
+When you use the open function, it returns something called a 
+ file object. File objects contain methods and attributes that can 
+ be used to collect information about the file you opened. They can 
+ also be used to manipulate said file.

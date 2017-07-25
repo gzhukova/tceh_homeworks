@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block body %}
+<div class="container"> 
+   <div class="row">
+        <div class="col-xs-12">
+            <div class="form-horizontal">
+            <h2 class="text-center text-info">{{post.title}}</h2>
+            <hr>
+            <h5>Дата создания: {{post.date_created}}</h5>
+            <p class="text-justify">{{post.content}}</p>
+            </div>
+        </div>
+    </div>
+</div>
+<hr>
+<div class="container"> 
+   <div class="row">
+        <div class="col-xs-12">
+            <div class="form-horizontal">
+                <h4 class="text-left">Комментарии к посту:</h4>
+            <ul>
+                {% for comment in comments %}
+                 <li><b>{{comment.article.user}}:</b>
+                     <em>{{comment.content}}</em>
+                </li>
+                {% endfor %}
+            </ul>
+                
+        <br>
+        <hr>
+        <form action="" method="post" class="text-left" accept-charset="utf-8">
+        <h4>Добавить новый комментарий</h4>
+              <textarea name="content" rows = '5' cols='60' required> </textarea>
+              <br>
+              <button type="submit" class="btn btn-default" style="float:left">Добавить комментарий</button>
+    </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
